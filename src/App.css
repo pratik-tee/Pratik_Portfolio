@@ -1,0 +1,7 @@
+/* All component-specific styles are in index.css and each component's inline styles.
+   This file handles only top-level layout. */
+
+.app {
+  min-height: 100vh;
+  position: relative;
+}
