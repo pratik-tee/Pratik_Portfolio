@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaDownload, FaArrowRight, FaCode } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
-import profileImg from "../assets/profile.jpg";
+import profileImg from "../assets/profile.jpeg";
 
 const TITLES = [
   "Software Engineer",
