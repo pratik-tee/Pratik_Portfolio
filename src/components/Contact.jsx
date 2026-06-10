@@ -2,8 +2,10 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaWhatsapp, FaGithub, FaLinkedin, FaPaperPlane } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
-const SERVICE_ID = "service_sptciau";
-const TEMPLATE_ID = "template_lnrahn9";
+import emailjs from "@emailjs/browser";
+const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
   show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: "easeOut" } },
@@ -31,16 +33,17 @@ const handleSubmit = async (e) => {
   setStatus("sending");
 
   try {
-    await window.emailjs.send(
-      SERVICE_ID,
-      TEMPLATE_ID,
-      {
-        from_name: form.name,
-        from_email: form.email,
-        subject: form.subject,
-        message: form.message,
-      }
-    );
+   await emailjs.send(
+  SERVICE_ID,
+  TEMPLATE_ID,
+  {
+    from_name: form.name,
+    from_email: form.email,
+    subject: form.subject,
+    message: form.message,
+  },
+  PUBLIC_KEY
+);
     setStatus("sent");
     setForm({ name: "", email: "", subject: "", message: "" });
     setTimeout(() => setStatus("idle"), 5000);
