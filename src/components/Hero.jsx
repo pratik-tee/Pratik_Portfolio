@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaDownload, FaArrowRight, FaCode } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
+import profileImg from "../assets/profile.jpg";
 
 const TITLES = [
   "Software Engineer",
@@ -63,14 +64,36 @@ const Hero = () => {
       }} />
 
       <div className="container" style={{ position: "relative", zIndex: 1, maxWidth: "1200px", margin: "0 auto", width: "100%" }}>
-        <motion.div variants={container} initial="hidden" animate="show">
+        <motion.div
+          variants={container}
+          initial="hidden"
+          animate="show"
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1.2fr 0.8fr",
+            gap: "50px",
+            alignItems: "center",
+          }}
+        >
 
           {/* Status badge */}
           <motion.div variants={item}>
             <span className="badge badge-accent" style={{ marginBottom: "28px", display: "inline-flex" }}>
               <span style={{ width: 7, height: 7, borderRadius: "50%", background: "#4ade80", animation: "pulse 2s infinite" }} />
-             Open to SDE, Data Engineering & AI/ML Roles
+              Open to SDE, Data Engineering & AI/ML Roles
             </span>
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <img
+                src={profileImg}
+                alt="Pratik"
+                style={{
+                  width: "380px",
+                  maxWidth: "100%",
+                  borderRadius: "24px",
+                  boxShadow: "0 20px 50px rgba(59,130,246,0.3)",
+                }}
+              />
+            </div>
           </motion.div>
 
           {/* Name */}
