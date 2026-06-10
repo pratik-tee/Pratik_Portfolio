@@ -69,7 +69,7 @@ const Hero = () => {
           <motion.div variants={item}>
             <span className="badge badge-accent" style={{ marginBottom: "28px", display: "inline-flex" }}>
               <span style={{ width: 7, height: 7, borderRadius: "50%", background: "#4ade80", animation: "pulse 2s infinite" }} />
-              Available for SDE Roles · 2025
+             Open to SDE, Data Engineering & AI/ML Roles
             </span>
           </motion.div>
 
