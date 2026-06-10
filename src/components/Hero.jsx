@@ -70,11 +70,12 @@ const Hero = () => {
           animate="show"
           style={{
             display: "grid",
-            gridTemplateColumns: "1.2fr 0.8fr",
+            gridTemplateColumns: "1.1fr 0.9fr",
             gap: "50px",
             alignItems: "center",
           }}
         >
+        <div>
 
           {/* Status badge */}
           <motion.div variants={item}>
@@ -82,19 +83,51 @@ const Hero = () => {
               <span style={{ width: 7, height: 7, borderRadius: "50%", background: "#4ade80", animation: "pulse 2s infinite" }} />
               Open to SDE, Data Engineering & AI/ML Roles
             </span>
-            <div style={{ display: "flex", justifyContent: "center" }}>
-              <img
-                src={profileImg}
-                alt="Pratik"
-                style={{
-                  width: "380px",
-                  maxWidth: "100%",
-                  borderRadius: "24px",
-                  boxShadow: "0 20px 50px rgba(59,130,246,0.3)",
-                }}
-              />
-            </div>
+            
           </motion.div>
+          </div>
+
+{/* RIGHT SIDE PHOTO */}
+<div style={{ display: "flex", justifyContent: "center" }}>
+  <div
+    style={{
+      position: "relative",
+      padding: "18px",
+      borderRadius: "32px",
+      background: "rgba(99,102,241,0.12)",
+      boxShadow: "0 0 80px rgba(99,102,241,0.25)",
+    }}
+  >
+    <div
+      style={{
+        position: "absolute",
+        top: "-15px",
+        right: "-10px",
+        background: "rgba(15,23,42,0.92)",
+        padding: "12px 18px",
+        borderRadius: "16px",
+      }}
+    >
+      <div style={{ fontSize: "11px", color: "#94a3b8" }}>
+        CURRENTLY
+      </div>
+      <div style={{ fontWeight: 700 }}>
+        Data Science Intern
+      </div>
+    </div>
+
+    <img
+      src={profileImg}
+      alt="Pratik"
+      style={{
+        width: "420px",
+        maxWidth: "100%",
+        borderRadius: "24px",
+        display: "block",
+      }}
+    />
+  </div>
+</div>
 
           {/* Name */}
           <motion.h1 variants={item} style={{
